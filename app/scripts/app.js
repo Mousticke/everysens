@@ -16,10 +16,12 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'restangular'
   ])
-  .config(function ($locationProvider, $routeProvider) {
+  .config(function ($qProvider, $locationProvider, $routeProvider, RestangularProvider) {
     $locationProvider.hashPrefix('!');
+    $qProvider.errorOnUnhandledRejections(false);
 
     $routeProvider
       .when('/', {
@@ -35,4 +37,20 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+    RestangularProvider.setBaseUrl('https://www.carqueryapi.com');
+
+
+    // add a response interceptor
+    RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+      var extractedData;
+      if (operation === "getList") {
+        extractedData = data.Models;
+      } else {
+        extractedData = data;
+      }
+      return extractedData;
+    });
   });
+
+
+

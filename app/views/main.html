@@ -4,8 +4,13 @@
     <img src="images/yeoman.png" alt="I'm Everysens"><br>
     Enter a car model.
   </p>
-  <form ng-submit="searchCar()">
-    <input type="text" placeholder="car model" ng-model="newuser.name" required />
+  <form method="get" ng-submit="searchCar()">
+    <input name="car-models" type="text" placeholder="car model" ng-model="car.models" required />
     <button class="btn btn-lg btn-success" type="submit">Search a Car &nbsp;<span class="glyphicon glyphicon-ok"></span></button>
   </form>
 </div>
+<ul>
+  <li ng-repeat="car in cars">
+    <p>{{car.model_name}}</p>
+  </li>
+</ul>
