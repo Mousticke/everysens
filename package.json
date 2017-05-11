@@ -1,10 +1,10 @@
 {
   "name": "everysens",
   "private": true,
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/Mousticke/npm.git"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mousticke/everysens.git"
+  },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",

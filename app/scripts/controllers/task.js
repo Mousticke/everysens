@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name everysensApp.controller:AboutCtrl
+ * @name everysensApp.controller:TaskCtrl
  * @description
- * # AboutCtrl
+ * # TaskCtrl
  * Controller of the everysensApp
  */
 angular.module('everysensApp')
-  .controller('AboutCtrl', function () {
+  .controller('TaskCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
